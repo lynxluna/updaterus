@@ -4,3 +4,6 @@
 [submodule "lib/gh-unit"]
 	path = lib/gh-unit
 	url = git@github.com:lynxluna/gh-unit.git
+[submodule "lib/MBProgressHud"]
+	path = lib/MBProgressHud
+	url = git@github.com:lynxluna/MBProgressHUD.git

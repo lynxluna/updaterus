@@ -61,6 +61,7 @@
 
 - (void) connection:(LUSimpleHTTP *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    [connection resetDataLength];
     if ([connection isKindOfClass:[LUSimpleHTTP class]]) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) response;
         connection.response = httpResponse;
@@ -141,21 +142,37 @@
     NSData *receivedData = connection.data;
     
     if (receivedData) {
-        NSString *jsonString = [NSString stringWithUTF8String:receivedData.bytes];
-        id parsedObject = [jsonString objectFromJSONString];
-        if (parsedObject) {
-            NSArray *parsedObjects;
-            if ([parsedObject isKindOfClass:[NSDictionary class]]) {
-                parsedObjects = [NSArray arrayWithObject:parsedObject];
-            }
-            else if ([parsedObject isKindOfClass:[NSArray class]]) {
-                parsedObjects = parsedObject;
-            }
+        NSString *jsonString = [NSString stringWithCString:[receivedData bytes] encoding:NSUTF8StringEncoding];
+#ifdef DEBUG
+        if (!jsonString) {
+            NSLog(@"%@", receivedData);
+        }
+#endif
+        
+        if (jsonString) {
+            id parsedObject = [jsonString objectFromJSONString];
+            if (parsedObject) {
+                NSArray *parsedObjects;
+                if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                    parsedObjects = [NSArray arrayWithObject:parsedObject];
+                }
+                else if ([parsedObject isKindOfClass:[NSArray class]]) {
+                    parsedObjects = parsedObject;
+                }
             
-            if (_delegate && [_delegate respondsToSelector:@selector(girlReceived:forDate:)]) {
-                [_delegate performSelector:@selector(girlReceived:forDate:)
+                if (_delegate && [_delegate respondsToSelector:@selector(girlReceived:forDate:)]) {
+                    [_delegate performSelector:@selector(girlReceived:forDate:)
                                 withObject:parsedObjects
                                 withObject:connection.date];
+                }
+            }
+        }
+        else {
+            NSError *error = [NSError errorWithDomain:@"HTTP" code:500 userInfo:nil];
+            if (_delegate && [_delegate respondsToSelector:@selector(requestFailed:withError:)]) {
+                [_delegate performSelector:@selector(requestFailed:withError:)
+                                withObject:connid
+                                withObject:error];
             }
         }
     }

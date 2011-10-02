@@ -7,6 +7,7 @@
 //
 
 #import "LUAppDelegate.h"
+#import "LUGirlViewController.h"
 
 @implementation LUAppDelegate
 
@@ -14,7 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    LUGirlViewController *girlViewController = [[LUGirlViewController alloc] initWithNibName:@"LUGirlViewController" 
+                                                                                      bundle:nil];
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = girlViewController;
+    [girlViewController release];
     [self.window makeKeyAndVisible];
     return YES;
 }
