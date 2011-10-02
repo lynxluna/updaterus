@@ -18,6 +18,8 @@
 		6C31A5851439065300F7214D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C31A5841439065300F7214D /* MessageUI.framework */; };
 		6C31A589143907CB00F7214D /* LUFullWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A587143907CB00F7214D /* LUFullWebController.m */; };
 		6C31A58A143907CB00F7214D /* LUFullWebController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C31A588143907CB00F7214D /* LUFullWebController.xib */; };
+		6C31A59F14391A1100F7214D /* LUCuteCaptcha.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A59E14391A1000F7214D /* LUCuteCaptcha.m */; };
+		6C31A5A31439282A00F7214D /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C31A5A11439282900F7214D /* libTestFlight.a */; };
 		6C4275C01438703B00C7E61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C014371FFE00D5A935 /* Foundation.framework */; };
 		6C4275D114387D6D00C7E61F /* LUSimpleHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */; };
 		6C4275D214387D7200C7E61F /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275CC1438719700C7E61F /* NSDictionary+QueryString.m */; };
@@ -113,6 +115,10 @@
 		6C31A586143907CB00F7214D /* LUFullWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUFullWebController.h; path = Controllers/LUFullWebController.h; sourceTree = "<group>"; };
 		6C31A587143907CB00F7214D /* LUFullWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUFullWebController.m; path = Controllers/LUFullWebController.m; sourceTree = "<group>"; };
 		6C31A588143907CB00F7214D /* LUFullWebController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LUFullWebController.xib; path = Controllers/LUFullWebController.xib; sourceTree = "<group>"; };
+		6C31A59D14391A1000F7214D /* LUCuteCaptcha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCuteCaptcha.h; path = customView/LUCuteCaptcha.h; sourceTree = "<group>"; };
+		6C31A59E14391A1000F7214D /* LUCuteCaptcha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUCuteCaptcha.m; path = customView/LUCuteCaptcha.m; sourceTree = "<group>"; };
+		6C31A5A11439282900F7214D /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		6C31A5A21439282900F7214D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		6C4275B714386F6900C7E61F /* LUSimpleHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUSimpleHTTP.h; path = lib/LUBKA/LUSimpleHTTP.h; sourceTree = SOURCE_ROOT; };
 		6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUSimpleHTTP.m; path = lib/LUBKA/LUSimpleHTTP.m; sourceTree = SOURCE_ROOT; };
 		6C4275BF1438703B00C7E61F /* libLUBKA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLUBKA.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +195,7 @@
 				6C4295C114371FFE00D5A935 /* Foundation.framework in Frameworks */,
 				6C4295C314371FFE00D5A935 /* CoreGraphics.framework in Frameworks */,
 				6C31A5801439039500F7214D /* libGoogleAdMobAds.a in Frameworks */,
+				6C31A5A31439282A00F7214D /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +244,16 @@
 			);
 			name = AdMob;
 			path = lib/AdMob;
+			sourceTree = "<group>";
+		};
+		6C31A5A01439282900F7214D /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				6C31A5A11439282900F7214D /* libTestFlight.a */,
+				6C31A5A21439282900F7214D /* TestFlight.h */,
+			);
+			name = TestFlight;
+			path = lib/TestFlight;
 			sourceTree = "<group>";
 		};
 		6C4275C11438703B00C7E61F /* LUBKA */ = {
@@ -319,6 +336,7 @@
 		6C4295AF14371FFE00D5A935 = {
 			isa = PBXGroup;
 			children = (
+				6C31A5A01439282900F7214D /* TestFlight */,
 				6C31A5771439039500F7214D /* AdMob */,
 				6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */,
 				6CC2BE231437579500ED36F8 /* Application Images */,
@@ -394,6 +412,8 @@
 				6C31A586143907CB00F7214D /* LUFullWebController.h */,
 				6C31A587143907CB00F7214D /* LUFullWebController.m */,
 				6C31A588143907CB00F7214D /* LUFullWebController.xib */,
+				6C31A59D14391A1000F7214D /* LUCuteCaptcha.h */,
+				6C31A59E14391A1000F7214D /* LUCuteCaptcha.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -602,6 +622,7 @@
 				6C31A5621438DFD600F7214D /* MBProgressHUD.m in Sources */,
 				6C31A5761438F7B300F7214D /* LUImageFetcher.m in Sources */,
 				6C31A589143907CB00F7214D /* LUFullWebController.m in Sources */,
+				6C31A59F14391A1100F7214D /* LUCuteCaptcha.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +787,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/AdMob\"",
+					"\"$(SRCROOT)/lib/TestFlight\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -779,6 +801,7 @@
 		6C4295D714371FFE00D5A935 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PT Sintesa Cipta Media";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Updaterus for iPad/Updaterus for iPad-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -787,12 +810,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/AdMob\"",
+					"\"$(SRCROOT)/lib/TestFlight\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DD1868F9-94A2-46F2-BE00-68457283BD1A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

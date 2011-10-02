@@ -30,11 +30,14 @@
     UIActivityIndicatorView *_imageIndicator;
     GADBannerView *_adView;
     LUFullWebController *_webController;
+    BOOL _paused;
 }
 @property (nonatomic, retain) IBOutlet UITableView *socialTableView;
 @property (nonatomic, retain) IBOutlet UIButton *cuteButton;
 @property (nonatomic, retain) IBOutlet UIImageView *photoView;
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *cuteCountLabel;
+@property (nonatomic, assign) BOOL     paused;
+- (IBAction)cuteButtonTappe:(id)sender;
 
 @end

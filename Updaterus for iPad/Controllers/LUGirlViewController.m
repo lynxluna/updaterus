@@ -11,6 +11,7 @@
 #import "LUBackend.h"
 #import "GADBannerView.h"
 #import "LUFullWebController.h"
+#import "LUCuteCaptcha.h"
 
 @interface LUGirlViewController (Private)
 - (void) fetchGirl: (NSTimer*) timer;
@@ -22,6 +23,7 @@
 @synthesize photoView = _photoView;
 @synthesize nameLabel = _nameLabel;
 @synthesize cuteCountLabel = _cuteCountLabel;
+@synthesize paused = _paused;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,6 +52,7 @@
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
         _imageIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         _webController = [[LUFullWebController alloc] initWithNibName:@"LUFullWebController" bundle:nil];
+        _paused = NO;
     }
     return self;
 }
@@ -194,6 +197,9 @@
         [_fetcher fetchImage:url cached:YES];
         [self.photoView setImage:[UIImage imageNamed:@"no-photo.jpg"]];
         [_imageIndicator startAnimating];
+        
+        NSString *girlDataString = [girlData description];
+        [TestFlight passCheckpoint:[NSString stringWithFormat:@"Gotten girl data: %@", girlDataString]];
     }
 }
 
@@ -344,4 +350,18 @@
     return (UIInterfaceOrientationIsLandscape(interfaceOrientation) ? NO : YES);
 }
 
+- (IBAction)cuteButtonTappe:(id)sender {
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    CGSize cuteSize = CGSizeMake(400.0f, 200.0f);
+    CGPoint cutePos = CGPointMake((screenSize.width - cuteSize.width) * 0.5f,
+                                  (screenSize.height - cuteSize.height) * 0.5f);
+    
+    NSString *uid = [_girlData objectForKey:@"id"];
+    if (uid && uid.length > 0) {
+    
+        LUCuteCaptcha *capchaBox = [[[LUCuteCaptcha alloc] initWithFrame:CGRectMake(cutePos.x, cutePos.y, cuteSize.width, cuteSize.height)] autorelease];
+        [capchaBox show:uid];
+    }
+}
 @end
