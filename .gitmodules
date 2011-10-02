@@ -1,0 +1,6 @@
+[submodule "lib/JSONKit"]
+	path = lib/JSONKit
+	url = git@github.com:lynxluna/JSONKit.git
+[submodule "lib/gh-unit"]
+	path = lib/gh-unit
+	url = git@github.com:lynxluna/gh-unit.git

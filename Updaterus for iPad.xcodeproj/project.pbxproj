@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C4275C01438703B00C7E61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C014371FFE00D5A935 /* Foundation.framework */; };
+		6C4275D114387D6D00C7E61F /* LUSimpleHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */; };
+		6C4275D214387D7200C7E61F /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275CC1438719700C7E61F /* NSDictionary+QueryString.m */; };
+		6C4275D314387D7200C7E61F /* NSString+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275CE1438719700C7E61F /* NSString+QueryString.m */; };
+		6C4275D414387DE600C7E61F /* libLUBKA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4275BF1438703B00C7E61F /* libLUBKA.a */; };
+		6C4275FA1438863000C7E61F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295BE14371FFE00D5A935 /* UIKit.framework */; };
+		6C4275FB1438863000C7E61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C014371FFE00D5A935 /* Foundation.framework */; };
+		6C4275FC1438863000C7E61F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C214371FFE00D5A935 /* CoreGraphics.framework */; };
+		6C4276021438863000C7E61F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C4276001438863000C7E61F /* InfoPlist.strings */; };
+		6C4276041438863000C7E61F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4276031438863000C7E61F /* main.m */; };
+		6C4276101438878500C7E61F /* testDefIcon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C42760F1438878500C7E61F /* testDefIcon_72.png */; };
+		6C427613143887D600C7E61F /* libLUBKA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4275BF1438703B00C7E61F /* libLUBKA.a */; };
+		6C427614143887D600C7E61F /* libGHUnitIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4275EF1438860C00C7E61F /* libGHUnitIOSSimulator.a */; };
+		6C42761914388F2E00C7E61F /* LUBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C42761714388F2D00C7E61F /* LUBackend.h */; };
+		6C42761A14388F2E00C7E61F /* LUBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C42761814388F2D00C7E61F /* LUBackend.m */; };
+		6C42761C1438935000C7E61F /* LUBackendDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C42761B1438935000C7E61F /* LUBackendDelegate.h */; };
+		6C427620143896EF00C7E61F /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C42761E143896EF00C7E61F /* JSONKit.h */; };
+		6C427621143896EF00C7E61F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C42761F143896EF00C7E61F /* JSONKit.m */; };
+		6C4295BF14371FFE00D5A935 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295BE14371FFE00D5A935 /* UIKit.framework */; };
+		6C4295C114371FFE00D5A935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C014371FFE00D5A935 /* Foundation.framework */; };
+		6C4295C314371FFE00D5A935 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C214371FFE00D5A935 /* CoreGraphics.framework */; };
+		6C4295C914371FFE00D5A935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C4295C714371FFE00D5A935 /* InfoPlist.strings */; };
+		6C4295CB14371FFE00D5A935 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4295CA14371FFE00D5A935 /* main.m */; };
+		6C4295CF14371FFE00D5A935 /* LUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4295CE14371FFE00D5A935 /* LUAppDelegate.m */; };
+		6C829A4A1438A2AC00BDC748 /* LUBackendTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4276231438A0CB00C7E61F /* LUBackendTest.m */; };
+		6CC2BE1F143755D400ED36F8 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */; };
+		6CC2BE22143755D900ED36F8 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */; };
+		6CFD11FA14374F6A009F4C97 /* heart-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD11F914374F6A009F4C97 /* heart-72.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C4275EE1438860C00C7E61F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0041C5EA13BA7B8A0015FC22;
+			remoteInfo = "GHUnitIOS (Simulator)";
+		};
+		6C4275F01438860C00C7E61F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0041C61313BA7C6C0015FC22;
+			remoteInfo = "GHUnitIOS (Device)";
+		};
+		6C4275F21438860C00C7E61F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0097C4A813BA7FC800D3BEF0;
+			remoteInfo = Tests;
+		};
+		6C427611143887CC00C7E61F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4295B114371FFE00D5A935 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C4275BE1438703B00C7E61F;
+			remoteInfo = LUBKA;
+		};
+		6C427615143887DB00C7E61F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0041C5E913BA7B8A0015FC22;
+			remoteInfo = "GHUnitIOS (Simulator)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C4275B714386F6900C7E61F /* LUSimpleHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUSimpleHTTP.h; path = lib/LUBKA/LUSimpleHTTP.h; sourceTree = SOURCE_ROOT; };
+		6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUSimpleHTTP.m; path = lib/LUBKA/LUSimpleHTTP.m; sourceTree = SOURCE_ROOT; };
+		6C4275BF1438703B00C7E61F /* libLUBKA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLUBKA.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4275C31438703C00C7E61F /* LUBKA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LUBKA-Prefix.pch"; sourceTree = "<group>"; };
+		6C4275CB1438719700C7E61F /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "lib/LUBKA/NSDictionary+QueryString.h"; sourceTree = SOURCE_ROOT; };
+		6C4275CC1438719700C7E61F /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+QueryString.m"; path = "lib/LUBKA/NSDictionary+QueryString.m"; sourceTree = SOURCE_ROOT; };
+		6C4275CD1438719700C7E61F /* NSString+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+QueryString.h"; path = "lib/LUBKA/NSString+QueryString.h"; sourceTree = SOURCE_ROOT; };
+		6C4275CE1438719700C7E61F /* NSString+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+QueryString.m"; path = "lib/LUBKA/NSString+QueryString.m"; sourceTree = SOURCE_ROOT; };
+		6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GHUnitIOS.xcodeproj; path = "lib/gh-unit/Project-iOS/GHUnitIOS.xcodeproj"; sourceTree = "<group>"; };
+		6C4275F81438863000C7E61F /* UTTestSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTTestSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4275FF1438863000C7E61F /* UTTestSimulator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UTTestSimulator-Info.plist"; sourceTree = "<group>"; };
+		6C4276011438863000C7E61F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C4276031438863000C7E61F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C4276051438863000C7E61F /* UTTestSimulator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UTTestSimulator-Prefix.pch"; sourceTree = "<group>"; };
+		6C42760F1438878500C7E61F /* testDefIcon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDefIcon_72.png; sourceTree = "<group>"; };
+		6C42761714388F2D00C7E61F /* LUBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBackend.h; path = lib/LUBKA/LUBackend.h; sourceTree = SOURCE_ROOT; };
+		6C42761814388F2D00C7E61F /* LUBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUBackend.m; path = lib/LUBKA/LUBackend.m; sourceTree = SOURCE_ROOT; };
+		6C42761B1438935000C7E61F /* LUBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBackendDelegate.h; path = lib/LUBKA/LUBackendDelegate.h; sourceTree = SOURCE_ROOT; };
+		6C42761E143896EF00C7E61F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = lib/JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
+		6C42761F143896EF00C7E61F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = lib/JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		6C4276221438A0CB00C7E61F /* LUBackendTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBackendTest.h; path = lib/LUBKA/tests/LUBackendTest.h; sourceTree = SOURCE_ROOT; };
+		6C4276231438A0CB00C7E61F /* LUBackendTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUBackendTest.m; path = lib/LUBKA/tests/LUBackendTest.m; sourceTree = SOURCE_ROOT; };
+		6C4295BA14371FFE00D5A935 /* Updaterus for iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Updaterus for iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4295BE14371FFE00D5A935 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6C4295C014371FFE00D5A935 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6C4295C214371FFE00D5A935 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6C4295C614371FFE00D5A935 /* Updaterus for iPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Updaterus for iPad-Info.plist"; sourceTree = "<group>"; };
+		6C4295C814371FFE00D5A935 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C4295CA14371FFE00D5A935 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C4295CC14371FFE00D5A935 /* Updaterus for iPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Updaterus for iPad-Prefix.pch"; sourceTree = "<group>"; };
+		6C4295CD14371FFE00D5A935 /* LUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUAppDelegate.h; sourceTree = "<group>"; };
+		6C4295CE14371FFE00D5A935 /* LUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUAppDelegate.m; sourceTree = "<group>"; };
+		6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		6CFD11F914374F6A009F4C97 /* heart-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-72.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C4275BC1438703B00C7E61F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4275C01438703B00C7E61F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4275F51438863000C7E61F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C427613143887D600C7E61F /* libLUBKA.a in Frameworks */,
+				6C427614143887D600C7E61F /* libGHUnitIOSSimulator.a in Frameworks */,
+				6C4275FA1438863000C7E61F /* UIKit.framework in Frameworks */,
+				6C4275FB1438863000C7E61F /* Foundation.framework in Frameworks */,
+				6C4275FC1438863000C7E61F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4295B714371FFE00D5A935 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4275D414387DE600C7E61F /* libLUBKA.a in Frameworks */,
+				6C4295BF14371FFE00D5A935 /* UIKit.framework in Frameworks */,
+				6C4295C114371FFE00D5A935 /* Foundation.framework in Frameworks */,
+				6C4295C314371FFE00D5A935 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C4275C11438703B00C7E61F /* LUBKA */ = {
+			isa = PBXGroup;
+			children = (
+				6C42761D143895C900C7E61F /* Parser */,
+				6C4275CA1438718800C7E61F /* extensions */,
+				6C4275C21438703C00C7E61F /* Supporting Files */,
+				6C42761714388F2D00C7E61F /* LUBackend.h */,
+				6C42761814388F2D00C7E61F /* LUBackend.m */,
+				6C42761B1438935000C7E61F /* LUBackendDelegate.h */,
+			);
+			name = LUBKA;
+			path = ../LUBKA;
+			sourceTree = "<group>";
+		};
+		6C4275C21438703C00C7E61F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275C31438703C00C7E61F /* LUBKA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C4275CA1438718800C7E61F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275B714386F6900C7E61F /* LUSimpleHTTP.h */,
+				6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */,
+				6C4275CB1438719700C7E61F /* NSDictionary+QueryString.h */,
+				6C4275CC1438719700C7E61F /* NSDictionary+QueryString.m */,
+				6C4275CD1438719700C7E61F /* NSString+QueryString.h */,
+				6C4275CE1438719700C7E61F /* NSString+QueryString.m */,
+			);
+			name = extensions;
+			path = "../Updaterus for iPad";
+			sourceTree = "<group>";
+		};
+		6C4275E41438860B00C7E61F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275EF1438860C00C7E61F /* libGHUnitIOSSimulator.a */,
+				6C4275F11438860C00C7E61F /* libGHUnitIOSDevice.a */,
+				6C4275F31438860C00C7E61F /* Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C4275FD1438863000C7E61F /* UTTestSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275FE1438863000C7E61F /* Supporting Files */,
+			);
+			path = UTTestSimulator;
+			sourceTree = "<group>";
+		};
+		6C4275FE1438863000C7E61F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275FF1438863000C7E61F /* UTTestSimulator-Info.plist */,
+				6C4276001438863000C7E61F /* InfoPlist.strings */,
+				6C4276031438863000C7E61F /* main.m */,
+				6C4276051438863000C7E61F /* UTTestSimulator-Prefix.pch */,
+				6C4276221438A0CB00C7E61F /* LUBackendTest.h */,
+				6C4276231438A0CB00C7E61F /* LUBackendTest.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C42761D143895C900C7E61F /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				6C42761E143896EF00C7E61F /* JSONKit.h */,
+				6C42761F143896EF00C7E61F /* JSONKit.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		6C4295AF14371FFE00D5A935 = {
+			isa = PBXGroup;
+			children = (
+				6C42760F1438878500C7E61F /* testDefIcon_72.png */,
+				6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */,
+				6CC2BE231437579500ED36F8 /* Application Images */,
+				6C4295C414371FFE00D5A935 /* Updaterus for iPad */,
+				6C4275FD1438863000C7E61F /* UTTestSimulator */,
+				6C4295BD14371FFE00D5A935 /* Frameworks */,
+				6C4295BB14371FFE00D5A935 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C4295BB14371FFE00D5A935 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C4295BA14371FFE00D5A935 /* Updaterus for iPad.app */,
+				6C4275BF1438703B00C7E61F /* libLUBKA.a */,
+				6C4275F81438863000C7E61F /* UTTestSimulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C4295BD14371FFE00D5A935 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C4295BE14371FFE00D5A935 /* UIKit.framework */,
+				6C4295C014371FFE00D5A935 /* Foundation.framework */,
+				6C4295C214371FFE00D5A935 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C4295C414371FFE00D5A935 /* Updaterus for iPad */ = {
+			isa = PBXGroup;
+			children = (
+				6C4275C11438703B00C7E61F /* LUBKA */,
+				6C4295D81437239500D5A935 /* Program Startup */,
+				6C4295C514371FFE00D5A935 /* Supporting Files */,
+			);
+			path = "Updaterus for iPad";
+			sourceTree = "<group>";
+		};
+		6C4295C514371FFE00D5A935 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4295C614371FFE00D5A935 /* Updaterus for iPad-Info.plist */,
+				6C4295C714371FFE00D5A935 /* InfoPlist.strings */,
+				6C4295CA14371FFE00D5A935 /* main.m */,
+				6C4295CC14371FFE00D5A935 /* Updaterus for iPad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C4295D81437239500D5A935 /* Program Startup */ = {
+			isa = PBXGroup;
+			children = (
+				6C4295CD14371FFE00D5A935 /* LUAppDelegate.h */,
+				6C4295CE14371FFE00D5A935 /* LUAppDelegate.m */,
+			);
+			name = "Program Startup";
+			sourceTree = "<group>";
+		};
+		6CC2BE231437579500ED36F8 /* Application Images */ = {
+			isa = PBXGroup;
+			children = (
+				6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */,
+				6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */,
+				6CFD11F914374F6A009F4C97 /* heart-72.png */,
+			);
+			name = "Application Images";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C4275BD1438703B00C7E61F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C42761914388F2E00C7E61F /* LUBackend.h in Headers */,
+				6C42761C1438935000C7E61F /* LUBackendDelegate.h in Headers */,
+				6C427620143896EF00C7E61F /* JSONKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C4275BE1438703B00C7E61F /* LUBKA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4275C71438703C00C7E61F /* Build configuration list for PBXNativeTarget "LUBKA" */;
+			buildPhases = (
+				6C4275BB1438703B00C7E61F /* Sources */,
+				6C4275BC1438703B00C7E61F /* Frameworks */,
+				6C4275BD1438703B00C7E61F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LUBKA;
+			productName = LUBKA;
+			productReference = 6C4275BF1438703B00C7E61F /* libLUBKA.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6C4275F71438863000C7E61F /* UTTestSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C42760C1438863000C7E61F /* Build configuration list for PBXNativeTarget "UTTestSimulator" */;
+			buildPhases = (
+				6C4275F41438863000C7E61F /* Sources */,
+				6C4275F51438863000C7E61F /* Frameworks */,
+				6C4275F61438863000C7E61F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C427616143887DB00C7E61F /* PBXTargetDependency */,
+				6C427612143887CC00C7E61F /* PBXTargetDependency */,
+			);
+			name = UTTestSimulator;
+			productName = UTTestSimulator;
+			productReference = 6C4275F81438863000C7E61F /* UTTestSimulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C4295B914371FFE00D5A935 /* Updaterus for iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4295D514371FFE00D5A935 /* Build configuration list for PBXNativeTarget "Updaterus for iPad" */;
+			buildPhases = (
+				6C4295B614371FFE00D5A935 /* Sources */,
+				6C4295B714371FFE00D5A935 /* Frameworks */,
+				6C4295B814371FFE00D5A935 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Updaterus for iPad";
+			productName = "Updaterus for iPad";
+			productReference = 6C4295BA14371FFE00D5A935 /* Updaterus for iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C4295B114371FFE00D5A935 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "lynxluna@gmail.com";
+			};
+			buildConfigurationList = 6C4295B414371FFE00D5A935 /* Build configuration list for PBXProject "Updaterus for iPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C4295AF14371FFE00D5A935;
+			productRefGroup = 6C4295BB14371FFE00D5A935 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6C4275E41438860B00C7E61F /* Products */;
+					ProjectRef = 6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6C4295B914371FFE00D5A935 /* Updaterus for iPad */,
+				6C4275BE1438703B00C7E61F /* LUBKA */,
+				6C4275F71438863000C7E61F /* UTTestSimulator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6C4275EF1438860C00C7E61F /* libGHUnitIOSSimulator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGHUnitIOSSimulator.a;
+			remoteRef = 6C4275EE1438860C00C7E61F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6C4275F11438860C00C7E61F /* libGHUnitIOSDevice.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGHUnitIOSDevice.a;
+			remoteRef = 6C4275F01438860C00C7E61F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6C4275F31438860C00C7E61F /* Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Tests.app;
+			remoteRef = 6C4275F21438860C00C7E61F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C4275F61438863000C7E61F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4276021438863000C7E61F /* InfoPlist.strings in Resources */,
+				6C4276101438878500C7E61F /* testDefIcon_72.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4295B814371FFE00D5A935 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4295C914371FFE00D5A935 /* InfoPlist.strings in Resources */,
+				6CFD11FA14374F6A009F4C97 /* heart-72.png in Resources */,
+				6CC2BE1F143755D400ED36F8 /* Default-Landscape~ipad.png in Resources */,
+				6CC2BE22143755D900ED36F8 /* Default-Portrait~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C4275BB1438703B00C7E61F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4275D114387D6D00C7E61F /* LUSimpleHTTP.m in Sources */,
+				6C4275D214387D7200C7E61F /* NSDictionary+QueryString.m in Sources */,
+				6C4275D314387D7200C7E61F /* NSString+QueryString.m in Sources */,
+				6C42761A14388F2E00C7E61F /* LUBackend.m in Sources */,
+				6C427621143896EF00C7E61F /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4275F41438863000C7E61F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4276041438863000C7E61F /* main.m in Sources */,
+				6C829A4A1438A2AC00BDC748 /* LUBackendTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4295B614371FFE00D5A935 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4295CB14371FFE00D5A935 /* main.m in Sources */,
+				6C4295CF14371FFE00D5A935 /* LUAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C427612143887CC00C7E61F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C4275BE1438703B00C7E61F /* LUBKA */;
+			targetProxy = 6C427611143887CC00C7E61F /* PBXContainerItemProxy */;
+		};
+		6C427616143887DB00C7E61F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GHUnitIOS (Simulator)";
+			targetProxy = 6C427615143887DB00C7E61F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C4276001438863000C7E61F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C4276011438863000C7E61F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6C4295C714371FFE00D5A935 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C4295C814371FFE00D5A935 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C4275C81438703C00C7E61F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/LUBKA.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LUBKA/LUBKA-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6C4275C91438703C00C7E61F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/LUBKA.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LUBKA/LUBKA-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6C42760D1438863000C7E61F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UTTestSimulator/UTTestSimulator-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes-iOS/**",
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes/**",
+				);
+				INFOPLIST_FILE = "UTTestSimulator/UTTestSimulator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6C42760E1438863000C7E61F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UTTestSimulator/UTTestSimulator-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes-iOS/**",
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes/**",
+				);
+				INFOPLIST_FILE = "UTTestSimulator/UTTestSimulator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6C4295D314371FFE00D5A935 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		6C4295D414371FFE00D5A935 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C4295D614371FFE00D5A935 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Updaterus for iPad/Updaterus for iPad-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Updaterus for iPad/Updaterus for iPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6C4295D714371FFE00D5A935 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Updaterus for iPad/Updaterus for iPad-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Updaterus for iPad/Updaterus for iPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C4275C71438703C00C7E61F /* Build configuration list for PBXNativeTarget "LUBKA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4275C81438703C00C7E61F /* Debug */,
+				6C4275C91438703C00C7E61F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C42760C1438863000C7E61F /* Build configuration list for PBXNativeTarget "UTTestSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C42760D1438863000C7E61F /* Debug */,
+				6C42760E1438863000C7E61F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C4295B414371FFE00D5A935 /* Build configuration list for PBXProject "Updaterus for iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4295D314371FFE00D5A935 /* Debug */,
+				6C4295D414371FFE00D5A935 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C4295D514371FFE00D5A935 /* Build configuration list for PBXNativeTarget "Updaterus for iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4295D614371FFE00D5A935 /* Debug */,
+				6C4295D714371FFE00D5A935 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C4295B114371FFE00D5A935 /* Project object */;
+}
