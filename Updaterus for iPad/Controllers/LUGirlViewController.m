@@ -9,6 +9,8 @@
 #import "LUGirlViewController.h"
 #import "Reachability.h"
 #import "LUBackend.h"
+#import "GADBannerView.h"
+#import "LUFullWebController.h"
 
 @interface LUGirlViewController (Private)
 - (void) fetchGirl: (NSTimer*) timer;
@@ -19,6 +21,8 @@
 @synthesize cuteButton = _cuteButton;
 @synthesize photoView = _photoView;
 @synthesize nameLabel = _nameLabel;
+@synthesize cuteCountLabel = _cuteCountLabel;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +34,12 @@
         _hud.delegate = self;
         _firstTime = NO;
         _girlData = [NSDictionary dictionary];
+        _fetcher  = [[LUImageFetcher alloc] initWithDelegate:self];
+        _adView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0,
+                                                                  self.view.frame.size.height -
+                                                                  GAD_SIZE_728x90.height,
+                                                                  GAD_SIZE_728x90.width,
+                                                                  GAD_SIZE_728x90.height)];
         
         NSDate *fistFireDate = [[NSDate date] addTimeInterval:2.0f];
         _timer = [[NSTimer alloc] initWithFireDate:fistFireDate 
@@ -38,6 +48,8 @@
                                           selector:@selector(fetchGirl:) 
                                           userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+        _imageIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _webController = [[LUFullWebController alloc] initWithNibName:@"LUFullWebController" bundle:nil];
     }
     return self;
 }
@@ -54,12 +66,16 @@
 
 - (void) dealloc
 {
+    [_timer release];
+    [_imageIndicator release];
+    [_webController release];
     [_backend release];
     [_hud release];
     [_socialTableView release];
     [_cuteButton release];
     [_photoView release];
     [_nameLabel release];
+    [_cuteCountLabel release];
     [super dealloc];
 }
 
@@ -77,6 +93,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.photoView addSubview:_imageIndicator];
+    _imageIndicator.hidesWhenStopped = YES;
+    [_imageIndicator stopAnimating];
+    
+    
+    _adView.adUnitID = @"a14e8895eddb20d";
+    _adView.rootViewController = self;
+    [self.view addSubview:_adView];
+    GADRequest *request = [GADRequest request];
+    
+    request.testDevices = [NSArray arrayWithObjects:
+                           GAD_SIMULATOR_ID,                               // Simulator
+                           @"0c3411d7be96f9787620ad7c7fc80e89199994eb",
+                           nil];
+    [_adView loadRequest:request];
 }
 
 - (BOOL)isReachable
@@ -114,6 +145,17 @@
     
 }
 
+- (void) imageReceived:(NSString *)urlString toCache:(NSString *)cachePath
+{
+    NSString *userId   = [_girlData objectForKey:@"id"];
+    NSString *photoSeq = [_girlData objectForKey:@"photo_seq"];
+    NSString *url      = [NSString stringWithFormat:@"http://www.updaterus.com/images/users/%@/%@.jpg", userId, photoSeq];
+    if ([urlString isEqualToString:url]) {
+        self.photoView.image = [UIImage imageWithContentsOfFile:cachePath];
+    }
+    [_imageIndicator stopAnimating];
+}
+
 - (void) connectionStarted:(NSString *)connectionIdentifier
 {
     if (!_firstTime) {
@@ -136,12 +178,22 @@
 
 - (void) girlReceived:(NSArray *)girlData forDate:(NSDate *)date
 {
+    
+    
     if (girlData && girlData.count > 0) {
         [_girlData release];
         _girlData = [[girlData objectAtIndex:0] retain];
         self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", [_girlData objectForKey:@"firstname"],
                                [_girlData objectForKey:@"lastname"]];
         [self.socialTableView reloadData];
+        
+        NSString *userId   = [_girlData objectForKey:@"id"];
+        NSString *photoSeq = [_girlData objectForKey:@"photo_seq"];
+        NSString *url      = [NSString stringWithFormat:@"http://www.updaterus.com/images/users/%@/%@.jpg", userId, photoSeq];
+        self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
+        [_fetcher fetchImage:url cached:YES];
+        [self.photoView setImage:[UIImage imageNamed:@"no-photo.jpg"]];
+        [_imageIndicator startAnimating];
     }
 }
 
@@ -166,6 +218,7 @@
     [self setCuteButton:nil];
     [self setPhotoView:nil];
     [self setNameLabel:nil];
+    [self setCuteCountLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -246,6 +299,44 @@
 - (NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     return 1;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *openedURL = nil;
+    switch (indexPath.row) {
+        case 3:
+            openedURL = [_girlData objectForKey:@"facebook"];
+            break;
+        case 4:
+            openedURL = [_girlData objectForKey:@"twitter"];        
+            break;
+        case 6:
+            openedURL = [_girlData objectForKey:@"website"];
+            break;
+        default:
+            break;
+    }
+    
+    if (!openedURL || openedURL.length == 0) {
+        return;
+    }
+    
+    if ([openedURL rangeOfString:@"http://"].location == NSNotFound) {
+        openedURL = [NSString stringWithFormat:@"http://%@", openedURL];
+    }
+    
+    NSURL *dataURL = [NSURL URLWithString:openedURL];
+    
+    if (dataURL) {
+        NSURLRequest *req = [NSURLRequest requestWithURL:dataURL];
+        [_webController.webView loadRequest:req];
+        [self presentModalViewController:_webController animated:YES];
+        
+        // [[UIApplication sharedApplication] openURL:dataURL];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

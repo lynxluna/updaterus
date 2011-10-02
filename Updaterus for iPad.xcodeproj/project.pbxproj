@@ -11,6 +11,13 @@
 		6C31A55E1438D98F00F7214D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A55D1438D98F00F7214D /* Reachability.m */; };
 		6C31A5621438DFD600F7214D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A5611438DFD600F7214D /* MBProgressHUD.m */; };
 		6C31A5641438E2F600F7214D /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C31A5631438E2F600F7214D /* 37x-Checkmark.png */; };
+		6C31A5761438F7B300F7214D /* LUImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A5751438F7B300F7214D /* LUImageFetcher.m */; };
+		6C31A5801439039500F7214D /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C31A57E1439039500F7214D /* libGoogleAdMobAds.a */; };
+		6C31A5811439039600F7214D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C31A57F1439039500F7214D /* README.txt */; };
+		6C31A5831439064C00F7214D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C31A5821439064B00F7214D /* AudioToolbox.framework */; };
+		6C31A5851439065300F7214D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C31A5841439065300F7214D /* MessageUI.framework */; };
+		6C31A589143907CB00F7214D /* LUFullWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C31A587143907CB00F7214D /* LUFullWebController.m */; };
+		6C31A58A143907CB00F7214D /* LUFullWebController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C31A588143907CB00F7214D /* LUFullWebController.xib */; };
 		6C4275C01438703B00C7E61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4295C014371FFE00D5A935 /* Foundation.framework */; };
 		6C4275D114387D6D00C7E61F /* LUSimpleHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */; };
 		6C4275D214387D7200C7E61F /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4275CC1438719700C7E61F /* NSDictionary+QueryString.m */; };
@@ -91,6 +98,21 @@
 		6C31A5601438DFD600F7214D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = lib/MBProgressHud/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		6C31A5611438DFD600F7214D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = lib/MBProgressHud/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		6C31A5631438E2F600F7214D /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37x-Checkmark.png"; path = "lib/MBProgressHud/Demo/Images/37x-Checkmark.png"; sourceTree = "<group>"; };
+		6C31A5741438F7B300F7214D /* LUImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUImageFetcher.h; path = lib/LUBKA/LUImageFetcher.h; sourceTree = SOURCE_ROOT; };
+		6C31A5751438F7B300F7214D /* LUImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUImageFetcher.m; path = lib/LUBKA/LUImageFetcher.m; sourceTree = SOURCE_ROOT; };
+		6C31A5781439039500F7214D /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		6C31A5791439039500F7214D /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		6C31A57A1439039500F7214D /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		6C31A57B1439039500F7214D /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		6C31A57C1439039500F7214D /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		6C31A57D1439039500F7214D /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		6C31A57E1439039500F7214D /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		6C31A57F1439039500F7214D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		6C31A5821439064B00F7214D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6C31A5841439065300F7214D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6C31A586143907CB00F7214D /* LUFullWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUFullWebController.h; path = Controllers/LUFullWebController.h; sourceTree = "<group>"; };
+		6C31A587143907CB00F7214D /* LUFullWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUFullWebController.m; path = Controllers/LUFullWebController.m; sourceTree = "<group>"; };
+		6C31A588143907CB00F7214D /* LUFullWebController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LUFullWebController.xib; path = Controllers/LUFullWebController.xib; sourceTree = "<group>"; };
 		6C4275B714386F6900C7E61F /* LUSimpleHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUSimpleHTTP.h; path = lib/LUBKA/LUSimpleHTTP.h; sourceTree = SOURCE_ROOT; };
 		6C4275B814386F6900C7E61F /* LUSimpleHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUSimpleHTTP.m; path = lib/LUBKA/LUSimpleHTTP.m; sourceTree = SOURCE_ROOT; };
 		6C4275BF1438703B00C7E61F /* libLUBKA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLUBKA.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,11 +181,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C31A5851439065300F7214D /* MessageUI.framework in Frameworks */,
+				6C31A5831439064C00F7214D /* AudioToolbox.framework in Frameworks */,
 				6C31A5591438D74200F7214D /* SystemConfiguration.framework in Frameworks */,
 				6C4275D414387DE600C7E61F /* libLUBKA.a in Frameworks */,
 				6C4295BF14371FFE00D5A935 /* UIKit.framework in Frameworks */,
 				6C4295C114371FFE00D5A935 /* Foundation.framework in Frameworks */,
 				6C4295C314371FFE00D5A935 /* CoreGraphics.framework in Frameworks */,
+				6C31A5801439039500F7214D /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +214,35 @@
 			name = "Progress Hud";
 			sourceTree = "<group>";
 		};
+		6C31A5731438F7A500F7214D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				6C31A5741438F7B300F7214D /* LUImageFetcher.h */,
+				6C31A5751438F7B300F7214D /* LUImageFetcher.m */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		6C31A5771439039500F7214D /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				6C31A5781439039500F7214D /* GADBannerView.h */,
+				6C31A5791439039500F7214D /* GADBannerViewDelegate.h */,
+				6C31A57A1439039500F7214D /* GADInterstitial.h */,
+				6C31A57B1439039500F7214D /* GADInterstitialDelegate.h */,
+				6C31A57C1439039500F7214D /* GADRequest.h */,
+				6C31A57D1439039500F7214D /* GADRequestError.h */,
+				6C31A57E1439039500F7214D /* libGoogleAdMobAds.a */,
+				6C31A57F1439039500F7214D /* README.txt */,
+			);
+			name = AdMob;
+			path = lib/AdMob;
+			sourceTree = "<group>";
+		};
 		6C4275C11438703B00C7E61F /* LUBKA */ = {
 			isa = PBXGroup;
 			children = (
+				6C31A5731438F7A500F7214D /* Image */,
 				6C42761D143895C900C7E61F /* Parser */,
 				6C4275CA1438718800C7E61F /* extensions */,
 				6C4275C21438703C00C7E61F /* Supporting Files */,
@@ -268,7 +319,7 @@
 		6C4295AF14371FFE00D5A935 = {
 			isa = PBXGroup;
 			children = (
-				6C31A5581438D74200F7214D /* SystemConfiguration.framework */,
+				6C31A5771439039500F7214D /* AdMob */,
 				6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */,
 				6CC2BE231437579500ED36F8 /* Application Images */,
 				6C4295C414371FFE00D5A935 /* Updaterus for iPad */,
@@ -291,6 +342,9 @@
 		6C4295BD14371FFE00D5A935 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C31A5841439065300F7214D /* MessageUI.framework */,
+				6C31A5821439064B00F7214D /* AudioToolbox.framework */,
+				6C31A5581438D74200F7214D /* SystemConfiguration.framework */,
 				6C4295BE14371FFE00D5A935 /* UIKit.framework */,
 				6C4295C014371FFE00D5A935 /* Foundation.framework */,
 				6C4295C214371FFE00D5A935 /* CoreGraphics.framework */,
@@ -337,6 +391,9 @@
 				6C93EC121438B12C002A1928 /* LUGirlViewController.h */,
 				6C93EC131438B12C002A1928 /* LUGirlViewController.m */,
 				6C93EC141438B12C002A1928 /* LUGirlViewController.xib */,
+				6C31A586143907CB00F7214D /* LUFullWebController.h */,
+				6C31A587143907CB00F7214D /* LUFullWebController.m */,
+				6C31A588143907CB00F7214D /* LUFullWebController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -505,6 +562,8 @@
 				6C93EC451438B965002A1928 /* logo-sitep.png in Resources */,
 				6C93EC471438C83F002A1928 /* right-arrow.png in Resources */,
 				6C31A5641438E2F600F7214D /* 37x-Checkmark.png in Resources */,
+				6C31A5811439039600F7214D /* README.txt in Resources */,
+				6C31A58A143907CB00F7214D /* LUFullWebController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +600,8 @@
 				6C93EC151438B12C002A1928 /* LUGirlViewController.m in Sources */,
 				6C31A55E1438D98F00F7214D /* Reachability.m in Sources */,
 				6C31A5621438DFD600F7214D /* MBProgressHUD.m in Sources */,
+				6C31A5761438F7B300F7214D /* LUImageFetcher.m in Sources */,
+				6C31A589143907CB00F7214D /* LUFullWebController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +763,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Updaterus for iPad/Updaterus for iPad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/AdMob\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -719,6 +784,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Updaterus for iPad/Updaterus for iPad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/AdMob\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
