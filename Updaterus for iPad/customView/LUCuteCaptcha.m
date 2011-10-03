@@ -12,6 +12,10 @@ static CGFloat kBorderGray[4] = {0.3, 0.3, 0.3, 0.8};
 static CGFloat kBorderWidth = 10;
 static CGFloat kTransitionDuration = 0.3;
 
+@interface LUCuteCaptcha(Private)
+- (void) close;
+@end
+
 @implementation LUCuteCaptcha
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate
@@ -22,8 +26,31 @@ static CGFloat kTransitionDuration = 0.3;
         _captchaView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _captchaView.delegate = self;
         [self addSubview:_captchaView];
+        
         self.opaque = NO;
         self.backgroundColor = [UIColor clearColor];
+        
+        UIImage *closeImage = [UIImage imageNamed:@"close"];
+        UIColor* color = [UIColor colorWithRed:167.0/255 green:167.0/255 blue:267.0/255 alpha:1];
+        
+        _closeButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+        [_closeButton setImage:closeImage forState:UIControlStateNormal];
+        [_closeButton setTitleColor:color forState:UIControlStateNormal];
+        [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [_closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([_closeButton respondsToSelector:@selector(titleLabel)]) {
+            _closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+        } else {
+            // to prevent deprecation warning, thus setFont: executed using performSelector on iOS 2.x
+            [_closeButton performSelector:@selector(setFont:) withObject:[UIFont boldSystemFontOfSize:12]];
+        }
+        
+        _closeButton.showsTouchWhenHighlighted = YES;
+        _closeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+        
+        [self addSubview:_closeButton];
+        
         _delegate = delegate;
     }
     return self;
@@ -84,10 +111,14 @@ static CGFloat kTransitionDuration = 0.3;
 {
     NSString *htmlString = [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
     if (!htmlString  || htmlString.length == 0) {
-        [self removeFromSuperview];
-        if (_delegate && [_delegate respondsToSelector:@selector(captchaDialogSucceded)]) {
-            [_delegate performSelector:@selector(captchaDialogSucceded)];
+
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(cuteCaptcha:cuteGivenToUserWithId:)]) {
+            [_delegate performSelector:@selector(cuteCaptcha:cuteGivenToUserWithId:)
+                            withObject:self
+                            withObject:_currId];
         }
+        [self close];
     }
 }
 
@@ -122,10 +153,19 @@ static CGFloat kTransitionDuration = 0.3;
 
 - (void) show: (NSString*) userId
 {
+    
     CGFloat innerWidth = self.frame.size.width - (kBorderWidth+1)*2;
     CGFloat innerHeight = self.frame.size.height - (kBorderWidth+1)*2;
-    _captchaView.frame = CGRectMake(kBorderWidth+1, kBorderWidth+1, 
-                                    innerWidth, innerHeight);
+    
+    [_closeButton sizeToFit];
+    CGSize csz = _closeButton.frame.size;
+    _closeButton.frame = CGRectMake(innerWidth - csz.width - 10, 
+                                    kBorderWidth, 
+                                    csz.width + 10, 
+                                    csz.height + 10);
+    
+    _captchaView.frame = CGRectMake(kBorderWidth+1, kBorderWidth + _closeButton.frame.size.height + 5, 
+                                    innerWidth, innerHeight - _closeButton.frame.size.height);
     
     NSString *urlReq = [NSString stringWithFormat:@"http://www.updaterus.com/index/get_captcha/%@?i", userId];
     NSURLRequest *uidReq = [NSURLRequest requestWithURL:[NSURL URLWithString:urlReq]];
@@ -146,6 +186,16 @@ static CGFloat kTransitionDuration = 0.3;
     
     [_currId release];
     _currId = [userId retain];
+}
+
+- (void) close
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:kTransitionDuration];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(removeFromSuperview)];
+    self.alpha = 0;
+    [UIView commitAnimations];
 }
 
 - (void) dealloc

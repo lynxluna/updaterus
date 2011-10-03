@@ -15,6 +15,10 @@ v 1.0.004
 ========
 * New Timer Mechanic
 
-v 1.0.004
+v 1.0.005
 =======
 * Refresh Handling fix
+
+v 1.0.006
+=======
+* Ability to cancel "Cute"
