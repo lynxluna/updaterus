@@ -22,3 +22,11 @@ v 1.0.005
 v 1.0.006
 =======
 * Ability to cancel "Cute"
+* Dialog Handling better
+
+v 1.0.007
+=====
+* Crossfade between images
+* Eliminate Crashes
+* Resizing Dialog for better matching
+* Fixed scheduling

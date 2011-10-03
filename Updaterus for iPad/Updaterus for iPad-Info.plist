@@ -27,13 +27,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.006</string>
+	<string>1.0.007</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LUBuildDate</key>
-	<string>2011-10-04 03:20:49</string>
+	<string>2011-10-04 03:51:52</string>
 	<key>LUBuildNumber</key>
-	<integer>6</integer>
+	<integer>7</integer>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
