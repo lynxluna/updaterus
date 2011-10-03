@@ -13,6 +13,8 @@
 #import "LUFullWebController.h"
 #import "LUCuteCaptcha.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface LUGirlViewController (Private)
 - (void) fetchGirl: (NSTimer*) timer;
 @end
@@ -33,7 +35,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _backend = [[LUBackend alloc] initWithAPIDomain:@"updaterus.com" delegate:self];
+        _backend = [[LUBackend alloc] initWithAPIDomain:@"www.updaterus.com" delegate:self];
         _hud = [[MBProgressHUD alloc] initWithView:self.view];
         _hud.animationType = MBProgressHUDAnimationZoom;
         _hud.delegate = self;
@@ -211,7 +213,18 @@
     NSString *photoSeq = [_girlData objectForKey:@"photo_seq"];
     NSString *url      = [NSString stringWithFormat:@"http://www.updaterus.com/images/users/%@/%@.jpg", userId, photoSeq];
     if ([urlString isEqualToString:url]) {
-        self.photoView.image = [UIImage imageWithContentsOfFile:cachePath];
+        UIImage *newImage = [UIImage imageWithContentsOfFile:cachePath];
+        UIImage *oldImage = [_photoView image];
+        
+        CABasicAnimation *crossFade = [CABasicAnimation animationWithKeyPath:@"contents"];
+        crossFade.duration = 1.5f;
+        crossFade.fromValue = oldImage;
+        crossFade.toValue = newImage;
+        
+        [[[self photoView] layer] addAnimation:crossFade forKey:@"animateContents"];
+        
+        self.photoView.image = newImage;
+    
     }
     [_imageIndicator stopAnimating];
 }
@@ -253,7 +266,6 @@
         NSString *url      = [NSString stringWithFormat:@"http://www.updaterus.com/images/users/%@/%@.jpg", userId, photoSeq];
         self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
         [_fetcher fetchImage:url cached:YES];
-        [self.photoView setImage:[UIImage imageNamed:@"no-photo.jpg"]];
         [_imageIndicator startAnimating];
     }
 }
