@@ -7,6 +7,7 @@
 //
 
 #import "LUCuteCaptcha.h"
+#import <QuartzCore/QuartzCore.h>
 
 static CGFloat kBorderGray[4] = {0.3, 0.3, 0.3, 0.8};
 static CGFloat kBorderWidth = 10;
@@ -166,6 +167,8 @@ static CGFloat kTransitionDuration = 0.3;
     
     _captchaView.frame = CGRectMake(kBorderWidth+1, kBorderWidth + _closeButton.frame.size.height + 5, 
                                     innerWidth, innerHeight - _closeButton.frame.size.height - 5);
+    [_captchaView.layer setCornerRadius:5.0f];
+    [_captchaView setClipsToBounds:YES];
     
     NSString *urlReq = [NSString stringWithFormat:@"http://www.updaterus.com/index/get_captcha/%@?i", userId];
     NSURLRequest *uidReq = [NSURLRequest requestWithURL:[NSURL URLWithString:urlReq]];

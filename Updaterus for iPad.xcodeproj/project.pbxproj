@@ -51,6 +51,7 @@
 		6C93EC451438B965002A1928 /* logo-sitep.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C93EC441438B965002A1928 /* logo-sitep.png */; };
 		6C93EC471438C83F002A1928 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C93EC461438C83F002A1928 /* right-arrow.png */; };
 		6CAF101B143A395D00E5F716 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF101A143A395D00E5F716 /* close.png */; };
+		6CAF104E143A53E300E5F716 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF104D143A53E300E5F716 /* QuartzCore.framework */; };
 		6CC2BE1F143755D400ED36F8 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */; };
 		6CC2BE22143755D900ED36F8 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */; };
 		6CFD11FA14374F6A009F4C97 /* heart-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD11F914374F6A009F4C97 /* heart-72.png */; };
@@ -161,6 +162,7 @@
 		6CAF101A143A395D00E5F716 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../lovemonday/lib/ShareKit/Classes/ShareKit/Sharers/Services/Facebook/FBConnect/FBConnect.bundle/images/close.png; sourceTree = "<group>"; };
 		6CAF101C143A398F00E5F716 /* LUCuteCaptchaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCuteCaptchaDelegate.h; path = customView/LUCuteCaptchaDelegate.h; sourceTree = "<group>"; };
 		6CAF1030143A4D7B00E5F716 /* BumpVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BumpVersion.sh; sourceTree = "<group>"; };
+		6CAF104D143A53E300E5F716 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		6CFD11F914374F6A009F4C97 /* heart-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-72.png"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CAF104E143A53E300E5F716 /* QuartzCore.framework in Frameworks */,
 				6C31A5851439065300F7214D /* MessageUI.framework in Frameworks */,
 				6C31A5831439064C00F7214D /* AudioToolbox.framework in Frameworks */,
 				6C31A5591438D74200F7214D /* SystemConfiguration.framework in Frameworks */,
@@ -365,6 +368,7 @@
 		6C4295BD14371FFE00D5A935 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CAF104D143A53E300E5F716 /* QuartzCore.framework */,
 				6C31A5841439065300F7214D /* MessageUI.framework */,
 				6C31A5821439064B00F7214D /* AudioToolbox.framework */,
 				6C31A5581438D74200F7214D /* SystemConfiguration.framework */,
@@ -1031,6 +1035,7 @@
 				6CAF102F143A4D5E00E5F716 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
