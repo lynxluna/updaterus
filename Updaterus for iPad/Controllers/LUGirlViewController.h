@@ -41,7 +41,8 @@
 @property (nonatomic, assign) BOOL     paused;
 @property (nonatomic, retain, readonly) NSTimer *timer;
 @property (nonatomic, retain, readonly) LUImageFetcher *fetcher;
+
 - (IBAction)cuteButtonTappe:(id)sender;
 - (void) cancelAllRequests;
-
+- (void) refresh;
 @end

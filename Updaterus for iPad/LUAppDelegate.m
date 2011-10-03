@@ -65,7 +65,7 @@
     if ([[_window rootViewController] isKindOfClass:[LUGirlViewController class]]) {
         LUGirlViewController *girlViewC = (LUGirlViewController*) _window.rootViewController;
         [girlViewC.fetcher activate];
-        [girlViewC.timer fire];
+        [girlViewC refresh];
     }
 }
 
