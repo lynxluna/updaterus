@@ -24,6 +24,8 @@
 @synthesize nameLabel = _nameLabel;
 @synthesize cuteCountLabel = _cuteCountLabel;
 @synthesize paused = _paused;
+@synthesize timer = _timer;
+@synthesize fetcher = _fetcher;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -57,6 +59,12 @@
     return self;
 }
 
+- (void) cancelAllRequests
+{
+    [_backend cancel];
+    [_fetcher cancel];
+}
+
 - (void) fetchGirl:(NSTimer *)timer
 {
     [_backend getGirlForNow];
@@ -67,8 +75,25 @@
     [_hud removeFromSuperview];
 }
 
+- (void) captchaDialogSucceded
+{
+    NSInteger currentCute = [[_girlData objectForKey:@"cute"] integerValue];
+    ++currentCute;
+    
+    NSMutableDictionary *dict = [_girlData mutableCopy];
+    [dict setValue:[NSString stringWithFormat:@"%d", currentCute] forKey:@"cute"];
+    [_girlData release];
+    _girlData = [dict retain];
+    [dict release];
+    
+    self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
+    self.cuteButton.enabled = NO;
+}
+
 - (void) dealloc
 {
+    [_backend cancel];
+    [_fetcher cancel];
     [_timer release];
     [_imageIndicator release];
     [_webController release];
@@ -184,6 +209,7 @@
     
     
     if (girlData && girlData.count > 0) {
+        self.cuteButton.enabled = YES;
         [_girlData release];
         _girlData = [[girlData objectAtIndex:0] retain];
         self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", [_girlData objectForKey:@"firstname"],
@@ -197,9 +223,6 @@
         [_fetcher fetchImage:url cached:YES];
         [self.photoView setImage:[UIImage imageNamed:@"no-photo.jpg"]];
         [_imageIndicator startAnimating];
-        
-        NSString *girlDataString = [girlData description];
-        [TestFlight passCheckpoint:[NSString stringWithFormat:@"Gotten girl data: %@", girlDataString]];
     }
 }
 
@@ -360,7 +383,7 @@
     NSString *uid = [_girlData objectForKey:@"id"];
     if (uid && uid.length > 0) {
     
-        LUCuteCaptcha *capchaBox = [[[LUCuteCaptcha alloc] initWithFrame:CGRectMake(cutePos.x, cutePos.y, cuteSize.width, cuteSize.height)] autorelease];
+        LUCuteCaptcha *capchaBox = [[[LUCuteCaptcha alloc] initWithFrame:CGRectMake(cutePos.x, cutePos.y, cuteSize.width, cuteSize.height) delegate:self] autorelease];
         [capchaBox show:uid];
     }
 }

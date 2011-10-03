@@ -11,11 +11,12 @@
 #import "LUImageFetcher.h"
 
 #import "MBProgressHUD.h"
+#import "LUCuteCaptcha.h"
 @class LUBackend;
 @class MBProgressHUD;
 @class GADBannerView;
 @class LUFullWebController;
-@interface LUGirlViewController : UIViewController<LUBackendDelegate, UIAlertViewDelegate, MBProgressHUDDelegate, UITableViewDataSource, UITableViewDelegate, LUImageFetcherDelegate> {
+@interface LUGirlViewController : UIViewController<LUBackendDelegate, UIAlertViewDelegate, MBProgressHUDDelegate, UITableViewDataSource, UITableViewDelegate, LUImageFetcherDelegate, LUCuteCaptchaDelegate> {
     LUBackend *_backend;
     MBProgressHUD *_hud;
     BOOL _firstTime;
@@ -38,6 +39,9 @@
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *cuteCountLabel;
 @property (nonatomic, assign) BOOL     paused;
+@property (nonatomic, retain, readonly) NSTimer *timer;
+@property (nonatomic, retain, readonly) LUImageFetcher *fetcher;
 - (IBAction)cuteButtonTappe:(id)sender;
+- (void) cancelAllRequests;
 
 @end

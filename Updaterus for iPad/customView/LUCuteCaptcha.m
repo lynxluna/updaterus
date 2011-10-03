@@ -14,7 +14,7 @@ static CGFloat kTransitionDuration = 0.3;
 
 @implementation LUCuteCaptcha
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame delegate:(id)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -24,6 +24,7 @@ static CGFloat kTransitionDuration = 0.3;
         [self addSubview:_captchaView];
         self.opaque = NO;
         self.backgroundColor = [UIColor clearColor];
+        _delegate = delegate;
     }
     return self;
 }
@@ -79,19 +80,14 @@ static CGFloat kTransitionDuration = 0.3;
     [self drawRect:grayRect fill:kBorderGray radius:10];
 }
 
-- (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    NSLog(@"URL - %@", [request.URL absoluteString]);
-    return YES;
-}
-
 - (void) webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString *htmlString = [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
-    NSLog(@"-- Content -- %@", htmlString);
     if (!htmlString  || htmlString.length == 0) {
         [self removeFromSuperview];
-        [TestFlight passCheckpoint:[NSString stringWithFormat:@"Voted for: %@", _currId]];
+        if (_delegate && [_delegate respondsToSelector:@selector(captchaDialogSucceded)]) {
+            [_delegate performSelector:@selector(captchaDialogSucceded)];
+        }
     }
 }
 

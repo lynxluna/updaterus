@@ -33,6 +33,7 @@
 - (BOOL) fileExistsInCache: (NSString*) fullURL;
 - (NSString*) cacheFileForURL: (NSString*) fullURL;
 - (void) cancel;
+- (void) activate;
 
 @property (nonatomic, assign, readonly) BOOL isCacheEmpty;
 @end
