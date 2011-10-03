@@ -14,3 +14,7 @@ v 1.0.003
 v 1.0.004
 ========
 * New Timer Mechanic
+
+v 1.0.004
+=======
+* Refresh Handling fix
