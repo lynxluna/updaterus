@@ -30,6 +30,10 @@
 	<string>1.0.006</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LUBuildDate</key>
+	<string>2011-10-04 03:20:49</string>
+	<key>LUBuildNumber</key>
+	<integer>6</integer>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

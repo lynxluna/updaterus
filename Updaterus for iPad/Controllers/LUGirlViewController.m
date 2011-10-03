@@ -41,6 +41,13 @@
         _girlData = [NSDictionary dictionary];
         _fetcher  = [[LUImageFetcher alloc] initWithDelegate:self];
         
+        NSDictionary *infodict = [[NSBundle mainBundle] infoDictionary];
+        self.versionLabel.text = [NSString stringWithFormat:@"Version %@ build %@",
+                                  [infodict objectForKey:@"CFBundleVersion"],
+                                  [infodict objectForKey:@"LUBuildDate"]];
+                                  
+                                  
+        
         NSDate *fistFireDate = [[NSDate date] addTimeInterval:2.0f];
         _timer = [[NSTimer alloc] initWithFireDate:fistFireDate 
                                           interval:1.0f 

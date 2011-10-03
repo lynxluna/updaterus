@@ -160,6 +160,7 @@
 		6C93EC461438C83F002A1928 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
 		6CAF101A143A395D00E5F716 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../lovemonday/lib/ShareKit/Classes/ShareKit/Sharers/Services/Facebook/FBConnect/FBConnect.bundle/images/close.png; sourceTree = "<group>"; };
 		6CAF101C143A398F00E5F716 /* LUCuteCaptchaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCuteCaptchaDelegate.h; path = customView/LUCuteCaptchaDelegate.h; sourceTree = "<group>"; };
+		6CAF1030143A4D7B00E5F716 /* BumpVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BumpVersion.sh; sourceTree = "<group>"; };
 		6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		6CFD11F914374F6A009F4C97 /* heart-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-72.png"; sourceTree = "<group>"; };
@@ -339,6 +340,7 @@
 		6C4295AF14371FFE00D5A935 = {
 			isa = PBXGroup;
 			children = (
+				6CAF1030143A4D7B00E5F716 /* BumpVersion.sh */,
 				6C31A5A01439282900F7214D /* TestFlight */,
 				6C31A5771439039500F7214D /* AdMob */,
 				6C4275E31438860B00C7E61F /* GHUnitIOS.xcodeproj */,
