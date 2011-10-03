@@ -39,15 +39,10 @@
         _firstTime = NO;
         _girlData = [NSDictionary dictionary];
         _fetcher  = [[LUImageFetcher alloc] initWithDelegate:self];
-        _adView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0,
-                                                                  self.view.frame.size.height -
-                                                                  GAD_SIZE_728x90.height,
-                                                                  GAD_SIZE_728x90.width,
-                                                                  GAD_SIZE_728x90.height)];
         
         NSDate *fistFireDate = [[NSDate date] addTimeInterval:2.0f];
         _timer = [[NSTimer alloc] initWithFireDate:fistFireDate 
-                                          interval:60.0f 
+                                          interval:1.0f 
                                             target:self 
                                           selector:@selector(fetchGirl:) 
                                           userInfo:nil repeats:YES];
@@ -55,6 +50,7 @@
         _imageIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         _webController = [[LUFullWebController alloc] initWithNibName:@"LUFullWebController" bundle:nil];
         _paused = NO;
+        [_backend getGirlForNow];
     }
     return self;
 }
@@ -65,9 +61,26 @@
     [_fetcher cancel];
 }
 
-- (void) fetchGirl:(NSTimer *)timer
+- (void) refresh
 {
     [_backend getGirlForNow];
+}
+
+- (void) fetchGirl:(NSTimer *)timer
+{
+    NSDate *currentDate = [NSDate date];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comp = [cal components:NSSecondCalendarUnit | NSMinuteCalendarUnit fromDate:currentDate];
+#ifdef DEBUG
+    NSLog(@"%d", (60 - comp.second));
+#endif
+    if ([comp second] == 0) {
+#ifdef DEBUG
+        NSLog(@"Fetching Contents..");
+#endif
+        [_backend getGirlForNow];
+    }
+    [cal release];
 }
 
 - (void) hudWasHidden
@@ -125,7 +138,11 @@
     _imageIndicator.hidesWhenStopped = YES;
     [_imageIndicator stopAnimating];
     
-    
+    _adView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0,
+                                                              self.view.frame.size.height -
+                                                              GAD_SIZE_728x90.height,
+                                                              GAD_SIZE_728x90.width,
+                                                              GAD_SIZE_728x90.height)];
     _adView.adUnitID = @"a14e8895eddb20d";
     _adView.rootViewController = self;
     [self.view addSubview:_adView];
@@ -136,6 +153,7 @@
                            @"0c3411d7be96f9787620ad7c7fc80e89199994eb",
                            nil];
     [_adView loadRequest:request];
+    [_timer fire];
 }
 
 - (BOOL)isReachable
@@ -168,7 +186,10 @@
 {
     [_hud hide:YES];
     if ([self checkConnections]) {
-        [_backend getGirlForNow];
+#if DEBUG
+        NSLog(@"-----FAILED and RETRYING---- %@", error.localizedDescription);
+#endif
+        [self refresh];
     }
     
 }
