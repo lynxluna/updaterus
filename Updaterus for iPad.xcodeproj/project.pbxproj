@@ -50,6 +50,7 @@
 		6C93EC1A1438B2F6002A1928 /* no-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C93EC191438B2F6002A1928 /* no-photo.jpg */; };
 		6C93EC451438B965002A1928 /* logo-sitep.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C93EC441438B965002A1928 /* logo-sitep.png */; };
 		6C93EC471438C83F002A1928 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C93EC461438C83F002A1928 /* right-arrow.png */; };
+		6CAF101B143A395D00E5F716 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF101A143A395D00E5F716 /* close.png */; };
 		6CC2BE1F143755D400ED36F8 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */; };
 		6CC2BE22143755D900ED36F8 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */; };
 		6CFD11FA14374F6A009F4C97 /* heart-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD11F914374F6A009F4C97 /* heart-72.png */; };
@@ -157,6 +158,8 @@
 		6C93EC191438B2F6002A1928 /* no-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-photo.jpg"; sourceTree = "<group>"; };
 		6C93EC441438B965002A1928 /* logo-sitep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-sitep.png"; sourceTree = "<group>"; };
 		6C93EC461438C83F002A1928 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
+		6CAF101A143A395D00E5F716 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../lovemonday/lib/ShareKit/Classes/ShareKit/Sharers/Services/Facebook/FBConnect/FBConnect.bundle/images/close.png; sourceTree = "<group>"; };
+		6CAF101C143A398F00E5F716 /* LUCuteCaptchaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCuteCaptchaDelegate.h; path = customView/LUCuteCaptchaDelegate.h; sourceTree = "<group>"; };
 		6CC2BE1E143755D400ED36F8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		6CC2BE21143755D900ED36F8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		6CFD11F914374F6A009F4C97 /* heart-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-72.png"; sourceTree = "<group>"; };
@@ -414,6 +417,7 @@
 				6C31A588143907CB00F7214D /* LUFullWebController.xib */,
 				6C31A59D14391A1000F7214D /* LUCuteCaptcha.h */,
 				6C31A59E14391A1000F7214D /* LUCuteCaptcha.m */,
+				6CAF101C143A398F00E5F716 /* LUCuteCaptchaDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 		6CC2BE231437579500ED36F8 /* Application Images */ = {
 			isa = PBXGroup;
 			children = (
+				6CAF101A143A395D00E5F716 /* close.png */,
 				6C31A5631438E2F600F7214D /* 37x-Checkmark.png */,
 				6C93EC461438C83F002A1928 /* right-arrow.png */,
 				6C93EC191438B2F6002A1928 /* no-photo.jpg */,
@@ -584,6 +589,7 @@
 				6C31A5641438E2F600F7214D /* 37x-Checkmark.png in Resources */,
 				6C31A5811439039600F7214D /* README.txt in Resources */,
 				6C31A58A143907CB00F7214D /* LUFullWebController.xib in Resources */,
+				6CAF101B143A395D00E5F716 /* close.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +667,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6C31A5CE14399FC500F7214D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PT Sintesa Cipta Media";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2EEA4651-0877-449F-A97E-0023B5B88A38";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		6C31A5CF14399FC500F7214D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PT Sintesa Cipta Media";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Updaterus for iPad/Updaterus for iPad-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Updaterus for iPad/Updaterus for iPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/AdMob\"",
+					"\"$(SRCROOT)/lib/TestFlight\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "606FD1A0-B0FA-4589-9CFD-70A7F5C2E469";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AppStore;
+		};
+		6C31A5D014399FC500F7214D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/LUBKA.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LUBKA/LUBKA-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = AppStore;
+		};
+		6C31A5D114399FC500F7214D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UTTestSimulator/UTTestSimulator-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes-iOS/**",
+					"$(SOURCE_ROOT)/lib/gh-unit/Classes/**",
+				);
+				INFOPLIST_FILE = "UTTestSimulator/UTTestSimulator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AppStore;
+		};
 		6C4275C81438703C00C7E61F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -736,7 +822,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Didiet Noor (6MZ3PA9739)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -751,6 +837,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0F98F96-2582-4E6C-B1D5-60FC225B8358";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -761,7 +848,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PT Sintesa Cipta Media";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -770,6 +857,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "606FD1A0-B0FA-4589-9CFD-70A7F5C2E469";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -817,7 +905,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DD1868F9-94A2-46F2-BE00-68457283BD1A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "606FD1A0-B0FA-4589-9CFD-70A7F5C2E469";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -830,6 +918,7 @@
 			buildConfigurations = (
 				6C4275C81438703C00C7E61F /* Debug */,
 				6C4275C91438703C00C7E61F /* Release */,
+				6C31A5D014399FC500F7214D /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -839,6 +928,7 @@
 			buildConfigurations = (
 				6C42760D1438863000C7E61F /* Debug */,
 				6C42760E1438863000C7E61F /* Release */,
+				6C31A5D114399FC500F7214D /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -848,6 +938,7 @@
 			buildConfigurations = (
 				6C4295D314371FFE00D5A935 /* Debug */,
 				6C4295D414371FFE00D5A935 /* Release */,
+				6C31A5CE14399FC500F7214D /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -857,6 +948,7 @@
 			buildConfigurations = (
 				6C4295D614371FFE00D5A935 /* Debug */,
 				6C4295D714371FFE00D5A935 /* Release */,
+				6C31A5CF14399FC500F7214D /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

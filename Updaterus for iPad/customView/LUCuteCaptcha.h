@@ -7,16 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class LUCuteCaptcha;
-@protocol LUCuteCaptchaDelegate <NSObject>
-
-- (void) captchaDialogSucceded;
-
-@end
+#import "LUCuteCaptchaDelegate.h"
 
 @interface LUCuteCaptcha : UIView<UIWebViewDelegate> {
     UIWebView *_captchaView;
+    UIButton *_closeButton;
     NSString *_currId;
     id _delegate;
 }

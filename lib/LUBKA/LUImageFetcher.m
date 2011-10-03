@@ -195,7 +195,7 @@
     NSString *key;
     NSEnumerator *enumerator = [_connections keyEnumerator];
     while ((key = [enumerator nextObject])) {
-        [[_connections objectForKey:key] cancel];
+        [[_connections objectForKey:key] close];
     }
     [_connections removeAllObjects];
     [_queue removeAllObjects];
@@ -281,7 +281,7 @@
     NSEnumerator *enumerator = [_connections keyEnumerator];
     NSString *key;
     while ((key = [enumerator nextObject])) {
-        [[_connections objectForKey:key] cancel];
+        [[_connections objectForKey:key] close];
     }
     [_connections removeAllObjects];
     

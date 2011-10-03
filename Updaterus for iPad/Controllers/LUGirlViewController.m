@@ -88,19 +88,21 @@
     [_hud removeFromSuperview];
 }
 
-- (void) captchaDialogSucceded
+- (void) cuteCaptcha:(LUCuteCaptcha *)dialog cuteGivenToUserWithId:(NSString *)userId
 {
-    NSInteger currentCute = [[_girlData objectForKey:@"cute"] integerValue];
-    ++currentCute;
-    
-    NSMutableDictionary *dict = [_girlData mutableCopy];
-    [dict setValue:[NSString stringWithFormat:@"%d", currentCute] forKey:@"cute"];
-    [_girlData release];
-    _girlData = [dict retain];
-    [dict release];
-    
-    self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
-    self.cuteButton.enabled = NO;
+    if ([userId isEqualToString:[_girlData objectForKey:@"id"]]) {
+        NSInteger currentCute = [[_girlData objectForKey:@"cute"] integerValue];
+        ++currentCute;
+        
+        NSMutableDictionary *dict = [_girlData mutableCopy];
+        [dict setValue:[NSString stringWithFormat:@"%d", currentCute] forKey:@"cute"];
+        [_girlData release];
+        _girlData = [dict retain];
+        [dict release];
+        
+        self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
+        self.cuteButton.enabled = NO;
+    }
 }
 
 - (void) dealloc
@@ -382,9 +384,8 @@
     
     if (dataURL) {
         NSURLRequest *req = [NSURLRequest requestWithURL:dataURL];
-        [_webController.webView loadRequest:req];
         [self presentModalViewController:_webController animated:YES];
-        
+        [_webController.webView loadRequest:req];
         // [[UIApplication sharedApplication] openURL:dataURL];
     }
 }

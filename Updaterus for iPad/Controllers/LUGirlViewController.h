@@ -11,7 +11,7 @@
 #import "LUImageFetcher.h"
 
 #import "MBProgressHUD.h"
-#import "LUCuteCaptcha.h"
+#import "LUCuteCaptchaDelegate.h"
 @class LUBackend;
 @class MBProgressHUD;
 @class GADBannerView;
@@ -21,6 +21,7 @@
     MBProgressHUD *_hud;
     BOOL _firstTime;
     NSDictionary *_girlData;
+    NSDictionary *_nextGirlData;
     UITableView *_socialTableView;
     UIButton *_cuteButton;
     UIImageView *_photoView;
