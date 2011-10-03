@@ -29,6 +29,7 @@
     UILabel *_cuteCountLabel;
     NSTimer *_timer;
     LUImageFetcher *_fetcher;
+    UILabel *_versionLabel;
     UIActivityIndicatorView *_imageIndicator;
     GADBannerView *_adView;
     LUFullWebController *_webController;
@@ -42,6 +43,7 @@
 @property (nonatomic, assign) BOOL     paused;
 @property (nonatomic, retain, readonly) NSTimer *timer;
 @property (nonatomic, retain, readonly) LUImageFetcher *fetcher;
+@property (nonatomic, retain) IBOutlet UILabel *versionLabel;
 
 - (IBAction)cuteButtonTappe:(id)sender;
 - (void) cancelAllRequests;

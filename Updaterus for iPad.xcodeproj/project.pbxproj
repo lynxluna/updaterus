@@ -453,6 +453,22 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		6CAF102B143A4D5E00E5F716 /* Bump Version */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 6CAF102C143A4D5E00E5F716 /* Build configuration list for PBXLegacyTarget "Bump Version" */;
+			buildPhases = (
+			);
+			buildToolPath = ./BumpVersion.sh;
+			dependencies = (
+			);
+			name = "Bump Version";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Bump Version";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		6C4275BE1438703B00C7E61F /* LUBKA */ = {
 			isa = PBXNativeTarget;
@@ -536,6 +552,7 @@
 				6C4295B914371FFE00D5A935 /* Updaterus for iPad */,
 				6C4275BE1438703B00C7E61F /* LUBKA */,
 				6C4275F71438863000C7E61F /* UTTestSimulator */,
+				6CAF102B143A4D5E00E5F716 /* Bump Version */,
 			);
 		};
 /* End PBXProject section */
@@ -910,6 +927,57 @@
 			};
 			name = Release;
 		};
+		6CAF102D143A4D5E00E5F716 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUGGING_SYMBOLS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6CAF102E143A4D5E00E5F716 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6CAF102F143A4D5E00E5F716 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = AppStore;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -952,6 +1020,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6CAF102C143A4D5E00E5F716 /* Build configuration list for PBXLegacyTarget "Bump Version" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CAF102D143A4D5E00E5F716 /* Debug */,
+				6CAF102E143A4D5E00E5F716 /* Release */,
+				6CAF102F143A4D5E00E5F716 /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

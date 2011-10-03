@@ -26,6 +26,7 @@
 @synthesize paused = _paused;
 @synthesize timer = _timer;
 @synthesize fetcher = _fetcher;
+@synthesize versionLabel = _versionLabel;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -119,6 +120,7 @@
     [_photoView release];
     [_nameLabel release];
     [_cuteCountLabel release];
+    [_versionLabel release];
     [super dealloc];
 }
 
@@ -271,6 +273,7 @@
     [self setPhotoView:nil];
     [self setNameLabel:nil];
     [self setCuteCountLabel:nil];
+    [self setVersionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
