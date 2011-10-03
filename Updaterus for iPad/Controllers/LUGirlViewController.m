@@ -189,7 +189,7 @@
 #if DEBUG
         NSLog(@"-----FAILED and RETRYING---- %@", error.localizedDescription);
 #endif
-        [_timer fire];
+        [self refresh];
     }
     
 }
