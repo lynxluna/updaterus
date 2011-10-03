@@ -142,7 +142,7 @@
     NSData *receivedData = connection.data;
     
     if (receivedData) {
-        NSString *jsonString = [NSString stringWithCString:[receivedData bytes] encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [[NSString stringWithCString:[receivedData bytes] encoding:NSUTF8StringEncoding] copy];
 #ifdef DEBUG
         if (!jsonString) {
             NSLog(@"%@", receivedData);
@@ -175,6 +175,7 @@
                                 withObject:error];
             }
         }
+        [jsonString release];
     }
     
     [_connections removeObjectForKey:connid];

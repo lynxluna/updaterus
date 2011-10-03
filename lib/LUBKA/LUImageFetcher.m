@@ -251,19 +251,29 @@
                                    [LUImageFetcher imageCacheDirectory], 
                                    fileName];
             BOOL saveSuccess = [receivedData writeToFile:imagePath atomically:YES];
-            if (saveSuccess && _delegate && _delegate != [NSNull null] && [_delegate respondsToSelector:@selector(imageReceived:toCache:)]) {
-                [_delegate performSelector:@selector(imageReceived:toCache:)
+            
+            if (!_canceled) {
+                if (saveSuccess && _delegate && _delegate != [NSNull null] && [_delegate respondsToSelector:@selector(imageReceived:toCache:)]) {
+                    [_delegate performSelector:@selector(imageReceived:toCache:)
                                 withObject:imageURL
                                 withObject:imagePath];
+                }
             }
         }
     }
     
     [_connections removeObjectForKey:connid];
     [self nextImage];
-    if (_delegate && [_delegate respondsToSelector:@selector(connectionFinished:)]) {
-        [_delegate performSelector:@selector(connectionFinished:) withObject:connid];
+    if (!_canceled) {
+        if (_delegate && [_delegate respondsToSelector:@selector(connectionFinished:)]) {
+            [_delegate performSelector:@selector(connectionFinished:) withObject:connid];
+        }
     }
+}
+
+- (void) activate
+{
+    _canceled = NO;
 }
 
 - (void) dealloc
