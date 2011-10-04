@@ -17,9 +17,10 @@
 {
     LUGirlViewController *girlViewController = [[LUGirlViewController alloc] initWithNibName:@"LUGirlViewController" bundle:nil];
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    
     self.window.rootViewController = girlViewController;
     [girlViewController release];
-    [self.window makeKeyAndVisible];
     
     [TestFlight takeOff:@"cf33818437b9fa294f9f57050a60ee4b_MzIzODQyMDExLTEwLTAyIDE5OjE5OjIwLjMxMjYwOQ"];
     

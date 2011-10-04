@@ -29,6 +29,9 @@
 @synthesize timer = _timer;
 @synthesize fetcher = _fetcher;
 @synthesize versionLabel = _versionLabel;
+@synthesize loadingIndicator = _loadingIndicator;
+@synthesize fetchingProgressLabel = _fetchingProgressLabel;
+@synthesize logoView = _logoView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,10 +39,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _backend = [[LUBackend alloc] initWithAPIDomain:@"www.updaterus.com" delegate:self];
-        _hud = [[MBProgressHUD alloc] initWithView:self.view];
-        _hud.animationType = MBProgressHUDAnimationZoom;
-        _hud.delegate = self;
-        _firstTime = NO;
+        _firstTime = YES;
         _girlData = [NSDictionary dictionary];
         _fetcher  = [[LUImageFetcher alloc] initWithDelegate:self];
         
@@ -130,6 +130,9 @@
     [_nameLabel release];
     [_cuteCountLabel release];
     [_versionLabel release];
+    [_loadingIndicator release];
+    [_fetchingProgressLabel release];
+    [_logoView release];
     [super dealloc];
 }
 
@@ -147,6 +150,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     [self.photoView addSubview:_imageIndicator];
     _imageIndicator.hidesWhenStopped = YES;
     [_imageIndicator stopAnimating];
@@ -167,6 +171,12 @@
                            nil];
     [_adView loadRequest:request];
     [_timer fire];
+    
+    UIWindow *win = [[UIApplication sharedApplication] keyWindow];
+    _hud = [[MBProgressHUD alloc] initWithWindow:win];
+    [self.view.window addSubview:_hud];
+    _hud.animationType = MBProgressHUDAnimationZoom;
+    _hud.delegate = self;
 }
 
 - (BOOL)isReachable
@@ -231,10 +241,11 @@
 
 - (void) connectionStarted:(NSString *)connectionIdentifier
 {
-    if (!_firstTime) {
-        _firstTime = YES;
+    if (_firstTime) {
+        _firstTime = NO;
         _hud.mode = MBProgressHUDModeIndeterminate;
         _hud.labelText = @"Getting new Data..";
+        [self.loadingIndicator stopAnimating];
         [_hud show:YES];
     }
 }
@@ -254,6 +265,23 @@
     
     
     if (girlData && girlData.count > 0) {
+        
+        if (self.fetchingProgressLabel.hidden != YES) {
+            for (UIView *view in self.view.subviews) {
+                if (view.hidden) {
+                    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+                    anim.fromValue = [NSNumber numberWithFloat:0.0f];
+                    anim.toValue   = [NSNumber numberWithFloat:1.0f];
+                    anim.duration  = 0.75;
+                    [view.layer addAnimation:anim forKey:@"animateAlpha"];
+                
+                    view.hidden = NO;
+                }
+            }
+            self.fetchingProgressLabel.hidden = YES;
+            self.loadingIndicator.hidden = YES;
+        }
+        
         self.cuteButton.enabled = YES;
         [_girlData release];
         _girlData = [[girlData objectAtIndex:0] retain];
@@ -285,6 +313,7 @@
     [self checkConnections];
 }
 
+
 - (void)viewDidUnload
 {
     [self setSocialTableView:nil];
@@ -293,6 +322,9 @@
     [self setNameLabel:nil];
     [self setCuteCountLabel:nil];
     [self setVersionLabel:nil];
+    [self setLoadingIndicator:nil];
+    [self setFetchingProgressLabel:nil];
+    [self setLogoView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

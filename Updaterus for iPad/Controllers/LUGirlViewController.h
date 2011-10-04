@@ -30,6 +30,9 @@
     NSTimer *_timer;
     LUImageFetcher *_fetcher;
     UILabel *_versionLabel;
+    UIActivityIndicatorView *_loadingIndicator;
+    UILabel *_fetchingProgressLabel;
+    UIImageView *_logoView;
     UIActivityIndicatorView *_imageIndicator;
     GADBannerView *_adView;
     LUFullWebController *_webController;
@@ -44,6 +47,9 @@
 @property (nonatomic, retain, readonly) NSTimer *timer;
 @property (nonatomic, retain, readonly) LUImageFetcher *fetcher;
 @property (nonatomic, retain) IBOutlet UILabel *versionLabel;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic, retain) IBOutlet UILabel *fetchingProgressLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *logoView;
 
 - (IBAction)cuteButtonTappe:(id)sender;
 - (void) cancelAllRequests;
