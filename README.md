@@ -38,3 +38,9 @@ v 1.0.009
 v 1.0.011
 =========
 * Fix on crash when cancelling connection
+
+v 1.0.013
+=========
+* Fading on screen
+* Loader for first view
+* Cute Button Behaviur Better
