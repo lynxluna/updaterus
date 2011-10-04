@@ -730,7 +730,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "606FD1A0-B0FA-4589-9CFD-70A7F5C2E469";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2EEA4651-0877-449F-A97E-0023B5B88A38";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AppStore;
@@ -928,7 +928,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "606FD1A0-B0FA-4589-9CFD-70A7F5C2E469";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "68459540-3C87-4B9F-BAE0-24529AE6B39C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

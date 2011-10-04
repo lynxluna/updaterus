@@ -30,3 +30,11 @@ v 1.0.007
 * Eliminate Crashes
 * Resizing Dialog for better matching
 * Fixed scheduling
+
+v 1.0.009
+=========
+* Fix ads placement
+
+v 1.0.011
+=========
+* Fix on crash when cancelling connection

@@ -54,7 +54,7 @@
     NSEnumerator *ke = [_connections keyEnumerator];
     NSString *key;
     while ((key = [ke nextObject])) {
-        [[_connections objectForKey:key] close];
+        [[_connections objectForKey:key] cancel];
     }
     [_connections removeAllObjects];
 }

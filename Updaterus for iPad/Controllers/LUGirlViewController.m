@@ -151,7 +151,7 @@
     _imageIndicator.hidesWhenStopped = YES;
     [_imageIndicator stopAnimating];
     
-    _adView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0,
+    _adView = [[GADBannerView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - GAD_SIZE_728x90.width) * 0.5f,
                                                               self.view.frame.size.height -
                                                               GAD_SIZE_728x90.height,
                                                               GAD_SIZE_728x90.width,
