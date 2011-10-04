@@ -187,10 +187,10 @@
 					<object class="IBUILabel" id="496810862">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{171, 448}, {345, 22}}</string>
+						<string key="NSFrame">{{179, 448}, {345, 22}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="831353346"/>
+						<reference key="NSNextKeyView" ref="499912780"/>
 						<string key="NSReuseIdentifierKey">_NS:327</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -214,7 +214,7 @@
 						<string key="NSFrame">{{99, 422}, {83, 60}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="67137897"/>
+						<reference key="NSNextKeyView" ref="367666257"/>
 						<string key="NSReuseIdentifierKey">_NS:327</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -263,7 +263,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">Zinda Syadza</string>
-						<object class="NSFont" key="IBUIFont" id="1011899968">
+						<object class="NSFont" key="IBUIFont" id="37378390">
 							<string key="NSName">Zapfino</string>
 							<double key="NSSize">18</double>
 							<int key="NSfFlags">16</int>
@@ -299,7 +299,7 @@
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUITextAlignment">1</int>
 					</object>
-					<object class="IBUIActivityIndicatorView" id="67137897">
+					<object class="IBUIActivityIndicatorView" id="367666257">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{366, 390}, {37, 37}}</string>
@@ -309,10 +309,10 @@
 						<string key="NSReuseIdentifierKey">_NS:853</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<bool key="IBUIHidesWhenStopped">NO</bool>
+						<bool key="IBUIAnimating">YES</bool>
 						<int key="IBUIStyle">0</int>
 					</object>
-					<object class="IBUILabel" id="831353346">
+					<object class="IBUILabel" id="499912780">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{285, 448}, {198, 62}}</string>
@@ -326,7 +326,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">..Fetching Data..</string>
-						<reference key="IBUIFont" ref="1011899968"/>
+						<reference key="IBUIFont" ref="37378390"/>
 						<reference key="IBUITextColor" ref="753172795"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -440,7 +440,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">loadingIndicator</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="67137897"/>
+						<reference key="destination" ref="367666257"/>
 					</object>
 					<int key="connectionID">31</int>
 				</object>
@@ -448,7 +448,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">fetchingProgressLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="831353346"/>
+						<reference key="destination" ref="499912780"/>
 					</object>
 					<int key="connectionID">32</int>
 				</object>
@@ -459,6 +459,22 @@
 						<reference key="destination" ref="1017511218"/>
 					</object>
 					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">arrowLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="995489472"/>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">descLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="496810862"/>
+					</object>
+					<int key="connectionID">36</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -495,10 +511,10 @@
 							<reference ref="766190686"/>
 							<reference ref="18432971"/>
 							<reference ref="496810862"/>
-							<reference ref="831353346"/>
+							<reference ref="499912780"/>
 							<reference ref="1017511218"/>
-							<reference ref="67137897"/>
 							<reference ref="989282721"/>
+							<reference ref="367666257"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -562,12 +578,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">29</int>
-						<reference key="object" ref="67137897"/>
+						<reference key="object" ref="367666257"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
-						<reference key="object" ref="831353346"/>
+						<reference key="object" ref="499912780"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</object>
@@ -629,7 +645,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -652,8 +668,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>arrowLabel</string>
 							<string>cuteButton</string>
 							<string>cuteCountLabel</string>
+							<string>descLabel</string>
 							<string>fetchingProgressLabel</string>
 							<string>loadingIndicator</string>
 							<string>logoView</string>
@@ -664,7 +682,9 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
 							<string>UIButton</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UIActivityIndicatorView</string>
@@ -679,8 +699,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>arrowLabel</string>
 							<string>cuteButton</string>
 							<string>cuteCountLabel</string>
+							<string>descLabel</string>
 							<string>fetchingProgressLabel</string>
 							<string>loadingIndicator</string>
 							<string>logoView</string>
@@ -692,11 +714,19 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
+								<string key="name">arrowLabel</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">cuteButton</string>
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">cuteCountLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">descLabel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">

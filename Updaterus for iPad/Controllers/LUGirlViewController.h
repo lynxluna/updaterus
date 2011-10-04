@@ -33,6 +33,8 @@
     UIActivityIndicatorView *_loadingIndicator;
     UILabel *_fetchingProgressLabel;
     UIImageView *_logoView;
+    UILabel *_descLabel;
+    UIImageView *_arrowLabel;
     UIActivityIndicatorView *_imageIndicator;
     GADBannerView *_adView;
     LUFullWebController *_webController;
@@ -50,6 +52,8 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (nonatomic, retain) IBOutlet UILabel *fetchingProgressLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *logoView;
+@property (nonatomic, retain) IBOutlet UILabel *descLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *arrowLabel;
 
 - (IBAction)cuteButtonTappe:(id)sender;
 - (void) cancelAllRequests;

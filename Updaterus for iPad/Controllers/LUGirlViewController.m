@@ -32,6 +32,8 @@
 @synthesize loadingIndicator = _loadingIndicator;
 @synthesize fetchingProgressLabel = _fetchingProgressLabel;
 @synthesize logoView = _logoView;
+@synthesize descLabel = _descLabel;
+@synthesize arrowLabel = _arrowLabel;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -100,6 +102,7 @@
 
 - (void) cuteCaptcha:(LUCuteCaptcha *)dialog cuteGivenToUserWithId:(NSString *)userId
 {
+    static NSString *okString = @"think I am cute, including you. Thanks for your vote!";
     if ([userId isEqualToString:[_girlData objectForKey:@"id"]]) {
         NSInteger currentCute = [[_girlData objectForKey:@"cute"] integerValue];
         ++currentCute;
@@ -111,7 +114,11 @@
         [dict release];
         
         self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
+        
+        self.descLabel.text     = okString;
+        self.cuteButton.hidden  = YES;
         self.cuteButton.enabled = NO;
+        self.arrowLabel.hidden  = YES;
     }
 }
 
@@ -133,6 +140,8 @@
     [_loadingIndicator release];
     [_fetchingProgressLabel release];
     [_logoView release];
+    [_descLabel release];
+    [_arrowLabel release];
     [super dealloc];
 }
 
@@ -262,8 +271,7 @@
 
 - (void) girlReceived:(NSArray *)girlData forDate:(NSDate *)date
 {
-    
-    
+    static NSString *defaultString = @"persons think I am cute, If you think so click on the Cute button";
     if (girlData && girlData.count > 0) {
         
         if (self.fetchingProgressLabel.hidden != YES) {
@@ -282,7 +290,10 @@
             self.loadingIndicator.hidden = YES;
         }
         
+        self.descLabel.text     = defaultString;
+        self.cuteButton.hidden  = NO;
         self.cuteButton.enabled = YES;
+        self.arrowLabel.hidden  = NO;
         [_girlData release];
         _girlData = [[girlData objectAtIndex:0] retain];
         self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", [_girlData objectForKey:@"firstname"],
@@ -325,6 +336,8 @@
     [self setLoadingIndicator:nil];
     [self setFetchingProgressLabel:nil];
     [self setLogoView:nil];
+    [self setDescLabel:nil];
+    [self setArrowLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
