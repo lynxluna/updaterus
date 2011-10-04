@@ -152,7 +152,7 @@
         if (jsonString) {
             id parsedObject = [jsonString objectFromJSONString];
             if (parsedObject) {
-                NSArray *parsedObjects;
+                NSArray *parsedObjects = nil;
                 if ([parsedObject isKindOfClass:[NSDictionary class]]) {
                     parsedObjects = [NSArray arrayWithObject:parsedObject];
                 }
@@ -246,6 +246,7 @@
     if ( _delegate && [_delegate respondsToSelector:@selector(connectionStarted:)] ) {
         [_delegate performSelector:@selector(connectionStarted:) withObject:httpConnection.identifier];
     }
+    [httpConnection release];
 }
 
 - (void) dealloc

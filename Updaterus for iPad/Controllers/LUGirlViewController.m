@@ -44,12 +44,6 @@
         _firstTime = YES;
         _girlData = [NSDictionary dictionary];
         _fetcher  = [[LUImageFetcher alloc] initWithDelegate:self];
-        
-        NSDictionary *infodict = [[NSBundle mainBundle] infoDictionary];
-        self.versionLabel.text = [NSString stringWithFormat:@"Version %@ build %@",
-                                  [infodict objectForKey:@"CFBundleVersion"],
-                                  [infodict objectForKey:@"LUBuildDate"]];
-                                  
                                   
         
         NSDate *fistFireDate = [[NSDate date] addTimeInterval:2.0f];
@@ -102,7 +96,7 @@
 
 - (void) cuteCaptcha:(LUCuteCaptcha *)dialog cuteGivenToUserWithId:(NSString *)userId
 {
-    static NSString *okString = @"think I am cute, including you. Thanks for your vote!";
+    static NSString *okString = @" persons think I am cute, including you. Thanks for your vote!";
     if ([userId isEqualToString:[_girlData objectForKey:@"id"]]) {
         NSInteger currentCute = [[_girlData objectForKey:@"cute"] integerValue];
         ++currentCute;
@@ -159,7 +153,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSDictionary *infodict = [[NSBundle mainBundle] infoDictionary];
+    self.versionLabel.text = [NSString stringWithFormat:@"Version %@ build %@",
+                              [infodict objectForKey:@"CFBundleVersion"],
+                              [infodict objectForKey:@"LUBuildDate"]];
     
+    self.descLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f];
     [self.photoView addSubview:_imageIndicator];
     _imageIndicator.hidesWhenStopped = YES;
     [_imageIndicator stopAnimating];
@@ -254,7 +253,7 @@
         _firstTime = NO;
         _hud.mode = MBProgressHUDModeIndeterminate;
         _hud.labelText = @"Getting new Data..";
-        [self.loadingIndicator stopAnimating];
+        [self.loadingIndicator startAnimating];
         [_hud show:YES];
     }
 }
@@ -267,11 +266,13 @@
         _hud.labelText = @"Done";
         [_hud hide:YES afterDelay:1];
     }
+    
 }
 
 - (void) girlReceived:(NSArray *)girlData forDate:(NSDate *)date
 {
     static NSString *defaultString = @"persons think I am cute, If you think so click on the Cute button";
+    [self.loadingIndicator stopAnimating];
     if (girlData && girlData.count > 0) {
         
         if (self.fetchingProgressLabel.hidden != YES) {
