@@ -44,3 +44,8 @@ v 1.0.013
 * Fading on screen
 * Loader for first view
 * Cute Button Behaviur Better
+
+v 1.0.014
+=========
+* Version Label Working Now
+* Indicator Fix
