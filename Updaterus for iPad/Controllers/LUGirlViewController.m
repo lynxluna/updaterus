@@ -185,6 +185,13 @@
     [self.view.window addSubview:_hud];
     _hud.animationType = MBProgressHUDAnimationZoom;
     _hud.delegate = self;
+    
+    CGFloat imgX = (_photoView.frame.size.width - _imageIndicator.frame.size.width) * 0.5f;
+    CGFloat imgY = (_photoView.frame.size.height - _imageIndicator.frame.size.height) * 0.5f;
+    CGRect  imgRect = _imageIndicator.frame;
+    imgRect.origin.x = imgX;
+    imgRect.origin.y = imgY;
+    _imageIndicator.frame = imgRect;
 }
 
 - (BOOL)isReachable
@@ -245,6 +252,7 @@
     
     }
     [_imageIndicator stopAnimating];
+    _photoView.alpha = 1.0f;
 }
 
 - (void) connectionStarted:(NSString *)connectionIdentifier
@@ -307,6 +315,7 @@
         self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
         [_fetcher fetchImage:url cached:YES];
         [_imageIndicator startAnimating];
+        _photoView.alpha = 0.6f;
     }
 }
 
