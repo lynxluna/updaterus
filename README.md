@@ -49,3 +49,8 @@ v 1.0.014
 =========
 * Version Label Working Now
 * Indicator Fix
+
+v 1.0.016
+========
+* Crash Fixed
+* Image Indicator more prominent
