@@ -252,6 +252,11 @@
     
     }
     [_imageIndicator stopAnimating];
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    anim.fromValue = [NSNumber numberWithFloat:0.5f];
+    anim.toValue   = [NSNumber numberWithFloat:1.0f];
+    anim.duration  = 0.3;
+    [_photoView.layer addAnimation:anim forKey:@"animateAlphaBack"];
     _photoView.alpha = 1.0f;
 }
 
@@ -314,8 +319,15 @@
         NSString *url      = [NSString stringWithFormat:@"http://www.updaterus.com/images/users/%@/%@.jpg", userId, photoSeq];
         self.cuteCountLabel.text = [_girlData objectForKey:@"cute"];
         [_fetcher fetchImage:url cached:YES];
+        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        anim.fromValue = [NSNumber numberWithFloat:1.0f];
+        anim.toValue   = [NSNumber numberWithFloat:0.5f];
+        anim.duration  = 0.3;
+        [_photoView.layer addAnimation:anim forKey:@"animateAlpha"];
+        _photoView.alpha = 0.5f;
+        
         [_imageIndicator startAnimating];
-        _photoView.alpha = 0.6f;
     }
 }
 
