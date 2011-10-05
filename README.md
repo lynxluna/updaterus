@@ -54,3 +54,7 @@ v 1.0.016
 ========
 * Crash Fixed
 * Image Indicator more prominent
+
+v 1.0.017
+========
+* Fading is now better than before
